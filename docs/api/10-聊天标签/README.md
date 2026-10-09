@@ -1,0 +1,16 @@
+# 10. 聊天标签
+
+> 源文件：`chat_tag.go` · 接口数：4（含 3 个待补全/未封装）
+>
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+
+聊天标签增删改与查询。
+
+## 接口列表
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 10.1 | 增删改聊天标签 | `ModSessionTag` | ✅ 已封装 | [10.1-ModSessionTag.md](./10.1-ModSessionTag.md) |
+| 10.2 | 获取聊天标签列表 | `GetSessionTagList` | 🔧 TODO | [10.2-GetSessionTagList.md](./10.2-GetSessionTagList.md) |
+| 10.3 | 获取标签下的联系人 | `GetSessionTagMembers` | 🔧 TODO | [10.3-GetSessionTagMembers.md](./10.3-GetSessionTagMembers.md) |
+| 10.4 | 新增/移除联系人到聊天标签 | `ModSessionTagMembers` | 🔧 TODO | [10.4-ModSessionTagMembers.md](./10.4-ModSessionTagMembers.md) |

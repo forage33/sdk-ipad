@@ -1,0 +1,51 @@
+# 14. 群操作
+
+> 源文件：`group.go` · 接口数：35（含 10 个待补全/未封装）
+>
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+
+群列表/成员/创建/解散/邀请/移除/公告/群名/二维码/欢迎语/转让等群接口。
+
+## 接口列表
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 14.1 | 获取客户群列表 | `GetChatroomMembers` | ✅ 已封装 | [14.1-GetChatroomMembers.md](./14.1-GetChatroomMembers.md) |
+| 14.2 | 获取群成员列表 | `GetRoomUserList` | ✅ 已封装 | [14.2-GetRoomUserList.md](./14.2-GetRoomUserList.md) |
+| 14.3 | 获取会话中的群列表 | `GetSessionRoomList` | ✅ 已封装 | [14.3-GetSessionRoomList.md](./14.3-GetSessionRoomList.md) |
+| 14.4 | 同意进群 | `AgreeAddRoom` | ✅ 已封装 | [14.4-AgreeAddRoom.md](./14.4-AgreeAddRoom.md) |
+| 14.5 | 二维码进群 | `AgreeCardAddRoom` | ✅ 已封装 | [14.5-AgreeCardAddRoom.md](./14.5-AgreeCardAddRoom.md) |
+| 14.6 | 创建内部群聊 | `CreateRoomNei` | ✅ 已封装 | [14.6-CreateRoomNei.md](./14.6-CreateRoomNei.md) |
+| 14.7 | 创建外部群聊 | `CreateRoomWx` | ✅ 已封装 | [14.7-CreateRoomWx.md](./14.7-CreateRoomWx.md) |
+| 14.8 | 发送群公告 | `SendNotice` | ✅ 已封装 | [14.8-SendNotice.md](./14.8-SendNotice.md) |
+| 14.9 | 修改群名 | `UpdateRoomName` | ✅ 已封装 | [14.9-UpdateRoomName.md](./14.9-UpdateRoomName.md) |
+| 14.10 | 发送链接的方式邀请成员进群 | `InvitationToRoomLink` | ✅ 已封装 | [14.10-InvitationToRoomLink.md](./14.10-InvitationToRoomLink.md) |
+| 14.11 | 直接邀请进群 | `InvitationToRoom` | ✅ 已封装 | [14.11-InvitationToRoom.md](./14.11-InvitationToRoom.md) |
+| 14.12 | 移除群成员 | `DelRoomUsers` | ✅ 已封装 | [14.12-DelRoomUsers.md](./14.12-DelRoomUsers.md) |
+| 14.13 | 设置群内昵称 | `SetMyRoomName` | ✅ 已封装 | [14.13-SetMyRoomName.md](./14.13-SetMyRoomName.md) |
+| 14.15 | 转让群主 | `TransferChatroomOwner` | ✅ 已封装 | [14.15-TransferChatroomOwner.md](./14.15-TransferChatroomOwner.md) |
+| 14.16 | 解散群 | `DissolutionRoom` | ✅ 已封装 | [14.16-DissolutionRoom.md](./14.16-DissolutionRoom.md) |
+| 14.17 | 获取群二维码 | `WxRoomInvite` | ✅ 已封装 | [14.17-WxRoomInvite.md](./14.17-WxRoomInvite.md) |
+| 14.18 | 获取欢迎语列表 | `GetWelcomeMsgList` | ✅ 已封装 | [14.18-GetWelcomeMsgList.md](./14.18-GetWelcomeMsgList.md) |
+| 14.19 | 添加欢迎语 | `AddWelcomeMsg` | ✅ 已封装 | [14.19-AddWelcomeMsg.md](./14.19-AddWelcomeMsg.md) |
+| 14.20 | 设置欢迎语 | `SetWelcomeMsg` | ✅ 已封装 | [14.20-SetWelcomeMsg.md](./14.20-SetWelcomeMsg.md) |
+| 14.21 | 取消欢迎语 | `DelWelcomeMsg` | ✅ 已封装 | [14.21-DelWelcomeMsg.md](./14.21-DelWelcomeMsg.md) |
+| 14.22 | 添加群成员好友 | `AddRoomFriends` | ✅ 已封装 | [14.22-AddRoomFriends.md](./14.22-AddRoomFriends.md) |
+| 14.23 | 退出群聊 | `OutRoomReq` | ✅ 已封装 | [14.23-OutRoomReq.md](./14.23-OutRoomReq.md) |
+| 14.24 | 获取群成员列表(简洁版) | `GetRoomDesUserList` | ✅ 已封装 | [14.24-GetRoomDesUserList.md](./14.24-GetRoomDesUserList.md) |
+| 14.25 | 获取群详细和头像 | `GetRoomInfo` | ✅ 已封装 | [14.25-GetRoomInfo.md](./14.25-GetRoomInfo.md) |
+| 14.26 | 获取群头像 | `WxRoomHeader` | ✅ 已封装 | [14.26-WxRoomHeader.md](./14.26-WxRoomHeader.md) |
+| 14.27 | 设置群备注 | — | 待补充 | [14.27-SetRoomRemark.md](./14.27-SetRoomRemark.md) |
+| 14.28 | 禁止修改群名字 | — | 待补充 | [14.28-ForbidModifyRoomName.md](./14.28-ForbidModifyRoomName.md) |
+| 14.29 | 群邀请确认 | — | 待补充 | [14.29-RoomInviteConfirm.md](./14.29-RoomInviteConfirm.md) |
+| 14.30 | 移除群管理 | — | 待补充 | [14.30-RemoveRoomAdmin.md](./14.30-RemoveRoomAdmin.md) |
+| 14.31 | 设置群管理 | — | 待补充 | [14.31-SetRoomAdmin.md](./14.31-SetRoomAdmin.md) |
+| 14.32 | 获取群防骚扰规则列表 | — | 待补充 | [14.32-GetRoomAntiSpamRuleList.md](./14.32-GetRoomAntiSpamRuleList.md) |
+| 14.33 | 设置或者移除群防骚扰规则 | — | 待补充 | [14.33-SetOrRemoveRoomAntiSpamRule.md](./14.33-SetOrRemoveRoomAntiSpamRule.md) |
+| 14.34 | 获取群聊黑名单列表 | — | 待补充 | [14.34-GetRoomBlacklist.md](./14.34-GetRoomBlacklist.md) |
+| 14.35 | 添加或者移除群聊黑名单 | — | 待补充 | [14.35-AddOrRemoveRoomBlacklist.md](./14.35-AddOrRemoveRoomBlacklist.md) |
+| 14.36 | 禁止群内添加和禁止修改群名 | — | 待补充 | [14.36-ForbidAddAndModifyRoomName.md](./14.36-ForbidAddAndModifyRoomName.md) |
+
+## 群设置（待补充）
+
+> 协议文档仅列出接口名称，参数与示例待确认。

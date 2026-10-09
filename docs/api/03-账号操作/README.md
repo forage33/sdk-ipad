@@ -1,0 +1,20 @@
+# 03. 账号操作
+
+> 源文件：`account.go` · 接口数：8
+>
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+
+账号详情/二维码/头像/企业信息/封禁原因/自动同意。
+
+## 接口列表
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 3.1 | 获取当前账号详情 | `GetProfile` | ✅ 已封装 | [3.1-GetProfile.md](./3.1-GetProfile.md) |
+| 3.2 | 获取当前账号二维码 | `GetThisQRCode` | ✅ 已封装 | [3.2-GetThisQRCode.md](./3.2-GetThisQRCode.md) |
+| 3.3 | 获取当前账号对外名片二维码 | `ExternalBusinessCard` | ✅ 已封装 | [3.3-ExternalBusinessCard.md](./3.3-ExternalBusinessCard.md) |
+| 3.4 | 设置头像 | `AddImage` | ✅ 已封装 | [3.4-AddImage.md](./3.4-AddImage.md) |
+| 3.5 | 设置用户信息 | `UpdateUserInfo` | ✅ 已封装 | [3.5-UpdateUserInfo.md](./3.5-UpdateUserInfo.md) |
+| 3.6 | 设置是否自动同意 | `AutomaticConsent` | ✅ 已封装 | [3.6-AutomaticConsent.md](./3.6-AutomaticConsent.md) |
+| 3.7 | 根据企业id获取企业详情 | `GetCorpInfo` | ✅ 已封装 | [3.7-GetCorpInfo.md](./3.7-GetCorpInfo.md) |
+| 3.8 | 获取当前账号封禁原因 | `GetBanDetail` | ✅ 已封装 | [3.8-GetBanDetail.md](./3.8-GetBanDetail.md) |

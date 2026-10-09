@@ -132,10 +132,9 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 
 | 路径 | 内容 |
 |---|---|
-| `docs/API_DOC.md` | 主动调用 API 全量文档（含错误码） |
 | `docs/ARCHITECTURE.md` / `docs/INDEX.md` | 架构说明 / 文档索引 |
-| `docs/api/` | 按域分册：01-init ~ 11-customer-service-merchant |
-| `docs/callback/` | 回调分册：01-login / 02-message / 03-group / 04-contact / 05-console-task / 06-label / 07-chattag-disconnect（契约层字段名的权威出处） |
+| `docs/api/` | API 接口文档：按域子目录（01-初始化 ~ 14-群操作）组织，每个请求路由一个独立文档；拆分前分册归档于 `docs/api/_archive/` |
+| `docs/callback/` | 回调消息文档：按域子目录（01-登录回调 ~ 07-聊天标签与断开回调）组织，每个回调事件一个独立文档（契约层字段名的权威出处）；拆分前分册归档于 `docs/callback/_archive/` |
 
 ## 配置参考（SdkConfig）
 

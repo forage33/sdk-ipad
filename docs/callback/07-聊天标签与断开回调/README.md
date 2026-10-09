@@ -1,0 +1,24 @@
+# 07. 聊天标签 & 断开回调
+
+> 契约层参考：`callback_payload_msg.go + callback_payload_account.go` · 回调数：7
+>
+> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+
+聊天标签变动、标签联系人变动、二次验证与断开类回调。
+
+## 七. 聊天标签
+
+| # | 回调 | 类型码 | SDK 常量 | 文档 |
+|---|------|--------|----------|------|
+| 7.1 | 聊天标签变动通知 | `102004` | `ChatLabelChange` | [7.1-ChatLabelChange.md](./7.1-ChatLabelChange.md) |
+| 7.2 | 聊天标签中的联系人变动通知 | `102005` | `ChatLabelMemberChange` | [7.2-ChatLabelMemberChange.md](./7.2-ChatLabelMemberChange.md) |
+
+## 八. 断开回调
+
+| # | 回调 | 类型码 | SDK 常量 | 文档 |
+|---|------|--------|----------|------|
+| 8.1 | 二次验证消息通知 | `100012` | `SecondAuth` | [8.1-SecondAuth.md](./8.1-SecondAuth.md) |
+| 8.2 | 手机端结束登陆 | `100005` | `EndLoginByPhone` | [8.2-EndLoginByPhone.md](./8.2-EndLoginByPhone.md) |
+| 8.3 | 当前账号在其他设备登陆 | `100008` | `LoginInOtherDevice` | [8.3-LoginInOtherDevice.md](./8.3-LoginInOtherDevice.md) |
+| 8.4 | 初始化接口二维码扫码超时 | `100009` | `OverTime` | [8.4-OverTime.md](./8.4-OverTime.md) |
+| 8.5 | 异常断开 | `100007` | `Exception` | [8.5-Exception.md](./8.5-Exception.md) |

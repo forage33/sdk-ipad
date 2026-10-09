@@ -1,0 +1,44 @@
+# 06. CDN 上传与下载
+
+> 源文件：`cdn.go` · 接口数：12（含 3 个待补全/未封装）
+>
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+
+大文件/图片/视频/文件的上传与下载（本地文件上传链路为 TODO）。
+
+## 大文件
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 6.1 | 大文件网络上传 | `BigFileUploadLinkIntegration` | ✅ 已封装 | [6.1-BigFileUploadLinkIntegration.md](./6.1-BigFileUploadLinkIntegration.md) |
+| 6.2 | 大文件上传 | `BigUploadFileIntegration` | ✅ 已封装 | [6.2-BigUploadFileIntegration.md](./6.2-BigUploadFileIntegration.md) |
+| 6.3 | 大文件下载 | `BigFileDownUrl` | ✅ 已封装 | [6.3-BigFileDownUrl.md](./6.3-BigFileDownUrl.md) |
+| 6.4 | 大文件下载参数获取 | `GetBigFileDownData` | ✅ 已封装 | [6.4-GetBigFileDownData.md](./6.4-GetBigFileDownData.md) |
+
+## 图片
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 6.5 | cdn上传网络图片 | `CdnUploadImgLinkIntegration` | ✅ 已封装 | [6.5-CdnUploadImgLinkIntegration.md](./6.5-CdnUploadImgLinkIntegration.md) |
+| 6.6 | cdn上传本地图片 | — | 待补充 | [6.6-CdnUploadLocalImage.md](./6.6-CdnUploadLocalImage.md) |
+
+## 视频
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 6.7 | cdn上传网络视频 | `UploadCdnVideoLinkIntegration` | ✅ 已封装 | [6.7-UploadCdnVideoLinkIntegration.md](./6.7-UploadCdnVideoLinkIntegration.md) |
+| 6.8 | cdn上传本地视频 | — | 🔧 TODO | [6.8-CdnUploadLocalVideo.md](./6.8-CdnUploadLocalVideo.md) |
+
+## 文件和语音skilk格式
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 6.9 | cdn上传网络文件 | `UploadCdnLinkFileIntegration` | ✅ 已封装 | [6.9-UploadCdnLinkFileIntegration.md](./6.9-UploadCdnLinkFileIntegration.md) |
+| 6.10 | cdn上传本地文件 | — | 🔧 TODO | [6.10-CdnUploadLocalFile.md](./6.10-CdnUploadLocalFile.md) |
+
+## cdn下载和个v文件下载
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 6.11 | cdn下载文件 | `DownloadFile` | ✅ 已封装 | [6.11-DownloadFile.md](./6.11-DownloadFile.md) |
+| 6.12 | 外部联系人图片视频文件下载 | `DownloadWeChatFile` | ✅ 已封装 | [6.12-DownloadWeChatFile.md](./6.12-DownloadWeChatFile.md) |

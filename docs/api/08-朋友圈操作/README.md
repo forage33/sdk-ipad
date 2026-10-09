@@ -1,0 +1,19 @@
+# 08. 朋友圈操作
+
+> 源文件：`moments.go` · 接口数：7
+>
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+
+朋友圈列表/详情/发送/删除/评论/点赞。
+
+## 接口列表
+
+| # | 接口 | SDK 方法 | 封装状态 | 文档 |
+|---|------|----------|----------|------|
+| 8.1 | 获取朋友圈列表 | `GetSnsList` | ✅ 已封装 | [8.1-GetSnsList.md](./8.1-GetSnsList.md) |
+| 8.2 | 获取朋友圈详情 | `GetSnsInfo` | ✅ 已封装 | [8.2-GetSnsInfo.md](./8.2-GetSnsInfo.md) |
+| 8.3 | 发送朋友圈 | `PostPyq` | ✅ 已封装 | [8.3-PostPyq.md](./8.3-PostPyq.md) |
+| 8.4 | 删除朋友圈 | `DeleteSns` | ✅ 已封装 | [8.4-DeleteSns.md](./8.4-DeleteSns.md) |
+| 8.5 | 发送朋友圈评论 | `CommentSns` | ✅ 已封装 | [8.5-CommentSns.md](./8.5-CommentSns.md) |
+| 8.6 | 删除朋友圈评论 | `DeleteSnsComment` | ✅ 已封装 | [8.6-DeleteSnsComment.md](./8.6-DeleteSnsComment.md) |
+| 8.7 | 朋友圈点赞或者取消点赞 | `LikeOrUnLikeSns` | ✅ 已封装 | [8.7-LikeOrUnLikeSns.md](./8.7-LikeOrUnLikeSns.md) |

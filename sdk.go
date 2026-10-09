@@ -187,4 +187,4 @@ func (s *SdkIPad) HandleCallback(msg *CallBackMsg, handler func(*AccountContext,
 //	ERR_99999998(-99999998, "官方服务端错误，请稍后重试")
 //	ERR_99999999(-99999999, "发送消息失败，服务器错误，请重试")
 //
-// 完整错误码列表请参考 API_DOC.md 文档。
+// 完整错误码列表请以协议服务文档为准。

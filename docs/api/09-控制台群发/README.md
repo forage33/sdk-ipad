@@ -10,9 +10,9 @@
 
 | # | 接口 | SDK 方法 | 封装状态 | 文档 |
 |---|------|----------|----------|------|
-| 9.1 | 确认群发消息 | `ConfirmGroupSend` | ✅ 已封装 | [9.1-ConfirmGroupSend.md](./9.1-ConfirmGroupSend.md) |
-| 9.2 | 获取未发送群发列表 | `GetPendingGroupSendList` | 🔧 TODO | [9.2-GetPendingGroupSendList.md](./9.2-GetPendingGroupSendList.md) |
-| 9.3 | 客户群发送任务-获取要发送的客户群列表 | `GetGroupSendCustomerList` | 🔧 TODO | [9.3-GetGroupSendCustomerList.md](./9.3-GetGroupSendCustomerList.md) |
-| 9.4 | 获取群发任务详细信息 | `GetGroupSendTaskDetail` | 🔧 TODO | [9.4-GetGroupSendTaskDetail.md](./9.4-GetGroupSendTaskDetail.md) |
-| 9.5 | 朋友圈控制台任务执行 | `ExecSnsConsoleTask` | 🔧 TODO | [9.5-ExecSnsConsoleTask.md](./9.5-ExecSnsConsoleTask.md) |
-| 9.6 | 管理员获取企业成员客户列表 | — | ❌ 未封装 | [9.6-GetCorpMemberCustomerList.md](./9.6-GetCorpMemberCustomerList.md) |
+| 9.1 | 确认群发消息 | `ConfirmGroupSend` | ✅ 已封装 | [9.1-确认群发消息.md](./9.1-确认群发消息.md) |
+| 9.2 | 获取未发送群发列表 | `GetPendingGroupSendList` | 🔧 TODO | [9.2-获取未发送群发列表.md](./9.2-获取未发送群发列表.md) |
+| 9.3 | 客户群发送任务-获取要发送的客户群列表 | `GetGroupSendCustomerList` | 🔧 TODO | [9.3-客户群发送任务-获取要发送的客户群列表.md](./9.3-客户群发送任务-获取要发送的客户群列表.md) |
+| 9.4 | 获取群发任务详细信息 | `GetGroupSendTaskDetail` | 🔧 TODO | [9.4-获取群发任务详细信息.md](./9.4-获取群发任务详细信息.md) |
+| 9.5 | 朋友圈控制台任务执行 | `ExecSnsConsoleTask` | 🔧 TODO | [9.5-朋友圈控制台任务执行.md](./9.5-朋友圈控制台任务执行.md) |
+| 9.6 | 管理员获取企业成员客户列表 | — | ❌ 未封装 | [9.6-管理员获取企业成员客户列表.md](./9.6-管理员获取企业成员客户列表.md) |

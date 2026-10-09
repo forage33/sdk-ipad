@@ -10,9 +10,9 @@
 
 | # | 回调 | 类型码 | SDK 常量 | 文档 |
 |---|------|--------|----------|------|
-| 1.1 | 扫码返回数据 | `100001` | `ScanReturn` | [1.1-ScanReturn.md](./1.1-ScanReturn.md) |
-| 1.2 | 取消扫码返回 | `100003` | `CancelReturn` | [1.2-CancelReturn.md](./1.2-CancelReturn.md) |
-| 1.3 | 确认扫码返回数据 | `100002` | `ConfirmReturn` | [1.3-ConfirmReturn.md](./1.3-ConfirmReturn.md) |
-| 1.4 | 登陆成功返回数据 | `104001` | `LoginSuccessReturn` | [1.4-LoginSuccessReturn.md](./1.4-LoginSuccessReturn.md) |
-| 1.5 | 企业切换回调 | `100006` | `CorpChange` | [1.5-CorpChange.md](./1.5-CorpChange.md) |
-| 1.6 | 需要输入验证码消息回调 | `100004` | `InputCode` | [1.6-InputCode.md](./1.6-InputCode.md) |
+| 1.1 | 扫码返回数据 | `100001` | `ScanReturn` | [1.1-扫码返回数据.md](./1.1-扫码返回数据.md) |
+| 1.2 | 取消扫码返回 | `100003` | `CancelReturn` | [1.2-取消扫码返回.md](./1.2-取消扫码返回.md) |
+| 1.3 | 确认扫码返回数据 | `100002` | `ConfirmReturn` | [1.3-确认扫码返回数据.md](./1.3-确认扫码返回数据.md) |
+| 1.4 | 登陆成功返回数据 | `104001` | `LoginSuccessReturn` | [1.4-登陆成功返回数据.md](./1.4-登陆成功返回数据.md) |
+| 1.5 | 企业切换回调 | `100006` | `CorpChange` | [1.5-企业切换回调.md](./1.5-企业切换回调.md) |
+| 1.6 | 需要输入验证码消息回调 | `100004` | `InputCode` | [1.6-需要输入验证码消息回调.md](./1.6-需要输入验证码消息回调.md) |

@@ -10,15 +10,15 @@
 
 | # | 回调 | 类型码 | SDK 常量 | 文档 |
 |---|------|--------|----------|------|
-| 7.1 | 聊天标签变动通知 | `102004` | `ChatLabelChange` | [7.1-ChatLabelChange.md](./7.1-ChatLabelChange.md) |
-| 7.2 | 聊天标签中的联系人变动通知 | `102005` | `ChatLabelMemberChange` | [7.2-ChatLabelMemberChange.md](./7.2-ChatLabelMemberChange.md) |
+| 7.1 | 聊天标签变动通知 | `102004` | `ChatLabelChange` | [7.1-聊天标签变动通知.md](./7.1-聊天标签变动通知.md) |
+| 7.2 | 聊天标签中的联系人变动通知 | `102005` | `ChatLabelMemberChange` | [7.2-聊天标签中的联系人变动通知.md](./7.2-聊天标签中的联系人变动通知.md) |
 
 ## 八. 断开回调
 
 | # | 回调 | 类型码 | SDK 常量 | 文档 |
 |---|------|--------|----------|------|
-| 8.1 | 二次验证消息通知 | `100012` | `SecondAuth` | [8.1-SecondAuth.md](./8.1-SecondAuth.md) |
-| 8.2 | 手机端结束登陆 | `100005` | `EndLoginByPhone` | [8.2-EndLoginByPhone.md](./8.2-EndLoginByPhone.md) |
-| 8.3 | 当前账号在其他设备登陆 | `100008` | `LoginInOtherDevice` | [8.3-LoginInOtherDevice.md](./8.3-LoginInOtherDevice.md) |
-| 8.4 | 初始化接口二维码扫码超时 | `100009` | `OverTime` | [8.4-OverTime.md](./8.4-OverTime.md) |
-| 8.5 | 异常断开 | `100007` | `Exception` | [8.5-Exception.md](./8.5-Exception.md) |
+| 8.1 | 二次验证消息通知 | `100012` | `SecondAuth` | [8.1-二次验证消息通知.md](./8.1-二次验证消息通知.md) |
+| 8.2 | 手机端结束登陆 | `100005` | `EndLoginByPhone` | [8.2-手机端结束登陆.md](./8.2-手机端结束登陆.md) |
+| 8.3 | 当前账号在其他设备登陆 | `100008` | `LoginInOtherDevice` | [8.3-当前账号在其他设备登陆.md](./8.3-当前账号在其他设备登陆.md) |
+| 8.4 | 初始化接口二维码扫码超时 | `100009` | `OverTime` | [8.4-初始化接口二维码扫码超时.md](./8.4-初始化接口二维码扫码超时.md) |
+| 8.5 | 异常断开 | `100007` | `Exception` | [8.5-异常断开.md](./8.5-异常断开.md) |

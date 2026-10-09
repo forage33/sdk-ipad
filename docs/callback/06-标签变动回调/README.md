@@ -10,7 +10,7 @@
 
 | # | 回调 | 类型码 | SDK 常量 | 文档 |
 |---|------|--------|----------|------|
-| 6.1 | 个人标签新增回调 | `130001` | `MyselfLabelChange` | [6.1-MyselfLabelAdd.md](./6.1-MyselfLabelAdd.md) |
-| 6.2 | 个人标签删除回调通知 | `130001` | `MyselfLabelChange` | [6.2-MyselfLabelDelete.md](./6.2-MyselfLabelDelete.md) |
-| 6.3 | 企业标签删除回调 | `130002` | `CorpLabelChange` | [6.3-CorpLabelDelete.md](./6.3-CorpLabelDelete.md) |
-| 6.4 | 企业标签新增回调 | `130002` | `CorpLabelChange` | [6.4-CorpLabelAdd.md](./6.4-CorpLabelAdd.md) |
+| 6.1 | 个人标签新增回调 | `130001` | `MyselfLabelChange` | [6.1-个人标签新增回调.md](./6.1-个人标签新增回调.md) |
+| 6.2 | 个人标签删除回调通知 | `130001` | `MyselfLabelChange` | [6.2-个人标签删除回调通知.md](./6.2-个人标签删除回调通知.md) |
+| 6.3 | 企业标签删除回调 | `130002` | `CorpLabelChange` | [6.3-企业标签删除回调.md](./6.3-企业标签删除回调.md) |
+| 6.4 | 企业标签新增回调 | `130002` | `CorpLabelChange` | [6.4-企业标签新增回调.md](./6.4-企业标签新增回调.md) |

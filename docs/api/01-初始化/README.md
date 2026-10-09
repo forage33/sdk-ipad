@@ -10,8 +10,8 @@
 
 | # | 接口 | SDK 方法 | 封装状态 | 文档 |
 |---|------|----------|----------|------|
-| 1.1 | 初始化企业微信 | `InItWXWork` | ✅ 已封装 | [1.1-InItWXWork.md](./1.1-InItWXWork.md) |
-| 1.2 | 设置消息回调地址 | `SetCallBackURL` | ✅ 已封装 | [1.2-SetCallBackURL.md](./1.2-SetCallBackURL.md) |
-| 1.3 | 获取运行中的实例 | `GetRunClient` | ✅ 已封装 | [1.3-GetRunClient.md](./1.3-GetRunClient.md) |
-| 1.4 | 根据uuid查看实例详情 | `GetRunClientByUuid` | ✅ 已封装 | [1.4-GetRunClientByUuid.md](./1.4-GetRunClientByUuid.md) |
-| 1.5 | 关闭链接 | `CloseConnect` | ✅ 已封装 | [1.5-CloseConnect.md](./1.5-CloseConnect.md) |
+| 1.1 | 初始化企业微信 | `InItWXWork` | ✅ 已封装 | [1.1-初始化企业微信.md](./1.1-初始化企业微信.md) |
+| 1.2 | 设置消息回调地址 | `SetCallBackURL` | ✅ 已封装 | [1.2-设置消息回调地址.md](./1.2-设置消息回调地址.md) |
+| 1.3 | 获取运行中的实例 | `GetRunClient` | ✅ 已封装 | [1.3-获取运行中的实例.md](./1.3-获取运行中的实例.md) |
+| 1.4 | 根据uuid查看实例详情 | `GetRunClientByUuid` | ✅ 已封装 | [1.4-根据uuid查看实例详情.md](./1.4-根据uuid查看实例详情.md) |
+| 1.5 | 关闭链接 | `CloseConnect` | ✅ 已封装 | [1.5-关闭链接.md](./1.5-关闭链接.md) |

@@ -75,23 +75,23 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 | `sdk.go` | 包文档与 SDK 主入口：`SdkIPad` 主结构体、`SdkConfig` 全局配置（分片/Worker 池/优先级队列（预留）/Logger 注入）、构造函数、账号上下文访问、回调入口 `HandleCallback`，附协议服务已知错误码参考表 |
 | `sdk_interface.go` | `SdkInterface` 接口定义：服务层使用的 SDK 方法集合（`SdkIPad` 隐式实现），供调用方 mock/替换 |
 
-### 主动调用 API（按协议域划分，14 个模块）
+### 主动调用 API（每接口一文件）
 
-| 文件 | 作用 |
-|---|---|
-| `api_wx_init.go` | 初始化相关：实例初始化（含代理配置）、回调地址设置（HTTP/RABBITMQ）、运行实例查询、连接关闭、按 VID 判运行状态 |
-| `api_login.go` | 登录相关：二维码获取、验证码校验、自动登录、退出登录、二次验证 |
-| `api_message_send.go` | 消息发送：文本/@、图片、文件、链接、语音、视频、表情、名片、位置、小程序、视频号、群发 |
-| `api_message_action.go` | 消息操作：撤回、已读标记、语音转文字、消息记录同步 |
-| `api_group.go` | 群相关：群列表、成员管理、建群、群公告、群名修改、邀请进群、群二维码、欢迎语、退群、解散 |
-| `api_contact_add.go` | 联系人查找添加：手机号搜索、搜索/名片/企微/共享好友添加、好友申请与同意、好友共享（加好友链路） |
-| `api_contact_manage.go` | 联系人管理：批量用户信息、内外部联系人列表、删除、备注、置顶/免打扰/标记/拉黑、会话列表 |
-| `api_cdn.go` | CDN 资源：网络图片/视频/文件上传、大文件上传下载、微信文件下载（含 `DownloadWechatFileResp` 字段名陷阱注释） |
-| `api_account.go` | 账号操作：头像设置、资料修改、个人二维码、封禁详情、对外名片、自动同意好友、企业信息查询 |
-| `api_moments.go` | 朋友圈：列表/详情、发布、删除、评论、点赞 |
-| `api_label.go` | 标签：列表、增删改、标签与联系人关联 |
-| `api_chat_tag.go` | 聊天标签：会话标签增删改 |
-| `api_broadcast.go` | 控制台群发：群发消息确认 |
+命名规则：`api_<域>_<方法名snake_case>.go`——如 `SendTextMsg` → `api_message_send_text_msg.go`、`RevokeMsg` → `api_message_revoke_msg.go`；域编号与 `docs/api` 一致；跨接口共享类型集中在 `api_common_types.go`。
+
+| 域 | 文件前缀 | 接口 |
+|---|---|---|
+| 01 初始化 | `api_wx_init_*.go` | 实例初始化（含代理配置）、回调地址设置（HTTP/RABBITMQ）、运行实例查询、连接关闭 等 7 个 |
+| 02 登录 | `api_login_*.go` | 二维码获取、验证码校验、自动登录、退出登录、二次验证 5 个 |
+| 03 账号操作 | `api_account_*.go` | 头像设置、资料修改、个人二维码、封禁详情、对外名片、企业信息 8 个 |
+| 05 标签 | `api_label_*.go` | 标签列表、增删改、标签与联系人关联 6 个 |
+| 06 CDN | `api_cdn_*.go` | 网络图片/视频/文件上传、大文件上传下载、微信文件下载 9 个 |
+| 07 联系人操作 | `api_contact_*.go` | 手机号搜索、添加好友链路、内外部联系人列表、删除、备注、置顶/免打扰/拉黑 23 个 |
+| 08 朋友圈 | `api_moments_*.go` | 列表/详情、发布、删除、评论、点赞 7 个 |
+| 09 控制台群发 | `api_broadcast_*.go` | 群发消息确认 1 个 |
+| 10 聊天标签 | `api_chat_tag_*.go` | 会话标签增删改 1 个 |
+| 13 发送消息 | `api_message_*.go` | 各类消息发送、撤回、已读标记、语音转文字、消息同步 20 个 |
+| 14 群操作 | `api_group_*.go` | 群列表、成员管理、建群、群公告、群名、邀请、二维码、欢迎语、退群、解散 25 个 |
 
 ### 回调机制（接收、分发、并发）
 

@@ -482,19 +482,8 @@ h.service.CallbackMsgChan <- &msg
 | `example_hooks.go` | Hook 示例、AccountHook、HookManager |
 | `http_client.go` | HTTP 客户端接口与默认实现 |
 | `flex_int64.go` | 容错整数类型（number/string 双格式兼容） |
-| `api_wx_init.go` | 初始化相关 API |
-| `api_login.go` | 登录相关 API |
-| `api_message_send.go` | 消息发送 API（Send* 全部发送接口） |
-| `api_message_action.go` | 消息操作 API（撤回/已读/语音转文字/同步） |
-| `api_group.go` | 群相关 API |
-| `api_contact_add.go` | 联系人查找添加 API（加好友链路） |
-| `api_contact_manage.go` | 联系人数据与设置管理 API |
-| `api_account.go` | 账号操作 API |
-| `api_label.go` | 标签 API |
-| `api_moments.go` | 朋友圈 API |
-| `api_chat_tag.go` | 聊天标签 API |
-| `api_cdn.go` | CDN 相关 API |
-| `api_broadcast.go` | 控制台群发 API |
+| `api_*.go`（112 个） | 主动调用 API：每接口一文件，命名 `api_<域>_<方法名snake_case>.go`（SendTextMsg → api_message_send_text_msg.go）；域编号与 docs/api 一致 |
+| `api_common_types.go` | 跨接口共享数据结构（CommonContactResp / CommonGroupResp / Sns* 等） |
 | `chat_msgtype.go` | 聊天消息 msgtype 常量 |
 | 测试文件 | `*_test.go`：按被测对象拆分（shard_manager / shared_pool / dispatcher / dispatcher_adapter / hook_manager / callback_payload_msg / callback_payload_account / callback_http / flex_int64 / group_qrcode） |
 

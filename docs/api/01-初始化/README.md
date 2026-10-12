@@ -1,6 +1,6 @@
 # 01. 初始化
 
-> 源文件：`api_wx_init.go` · 接口数：5
+> 源文件：`api_wx_init_*.go`（每接口一文件） · 接口数：5
 >
 > ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
 

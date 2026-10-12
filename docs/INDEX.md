@@ -17,34 +17,34 @@
 > 每个请求路由一个独立文档，按协议域分目录；点击域标题进入该域总览（含逐接口索引与封装状态）。
 > 拆分前的按域合并分册已归档至 [api/_archive/](api/_archive/README.md)。
 
-### [01. 初始化](api/01-初始化/README.md) (`api_wx_init.go`)
+### [01. 初始化](api/01-初始化/README.md) (`api_wx_init_*.go`)
 初始化企业微信、设置回调地址、获取实例、关闭连接 — **5 个接口**
 
-### [02. 登录](api/02-登录/README.md) (`api_login.go`)
+### [02. 登录](api/02-登录/README.md) (`api_login_*.go`)
 获取二维码、验证码登录、自动登录、退出 — **4 个接口**
 
-### [03. 账号操作](api/03-账号操作/README.md) (`api_account.go`)
+### [03. 账号操作](api/03-账号操作/README.md) (`api_account_*.go`)
 账号详情/二维码/头像/企业信息/封禁原因/自动同意 — **8 个接口**
 
 ### [04. 开放平台](api/04-开放平台/README.md)
 文档页面未成功抓取，具体接口待确认 — **暂无接口文档**
 
-### [05. 标签](api/05-标签/README.md) (`api_label.go`)
+### [05. 标签](api/05-标签/README.md) (`api_label_*.go`)
 标签的增删改查、为用户/标签关联 — **6 个接口**
 
-### [06. CDN 上传与下载](api/06-CDN上传与下载/README.md) (`api_cdn.go`)
+### [06. CDN 上传与下载](api/06-CDN上传与下载/README.md) (`api_cdn_*.go`)
 大文件/图片/视频/文件上传下载 — **12 个接口**（含 3 个本地上传 TODO）
 
-### [07. 联系人操作](api/07-联系人操作/README.md) (`api_contact_add.go` / `api_contact_manage.go`)
+### [07. 联系人操作](api/07-联系人操作/README.md) (`api_contact_*.go`)
 联系人列表/搜索/添加/删除/备注/置顶/免打扰/拉黑/标记/共享 — **23 个接口**
 
-### [08. 朋友圈操作](api/08-朋友圈操作/README.md) (`api_moments.go`)
+### [08. 朋友圈操作](api/08-朋友圈操作/README.md) (`api_moments_*.go`)
 朋友圈列表/详情/发送/删除/评论/点赞 — **7 个接口**
 
-### [09. 控制台群发](api/09-控制台群发/README.md) (`api_broadcast.go`)
+### [09. 控制台群发](api/09-控制台群发/README.md) (`api_broadcast_*.go`)
 群发任务确认/查询 — **6 个接口**（多数待补全）
 
-### [10. 聊天标签](api/10-聊天标签/README.md) (`api_chat_tag.go`)
+### [10. 聊天标签](api/10-聊天标签/README.md) (`api_chat_tag_*.go`)
 聊天标签增删改与查询 — **4 个接口**（多数待补全）
 
 ### [11. 客服管理](api/11-客服管理/README.md)
@@ -53,10 +53,10 @@
 ### [12. 商家收款](api/12-商家收款/README.md)
 商户列表/收款二维码/发送收款小程序 — **3 个接口**（均未封装）
 
-### [13. 发送消息](api/13-发送消息/README.md) (`api_message_send.go` / `api_message_action.go`)
+### [13. 发送消息](api/13-发送消息/README.md) (`api_message_*.go`)
 文本/图片/文件/语音/视频/链接/小程序/名片/位置/表情/@消息/群发/撤回/已读 — **20 个接口**
 
-### [14. 群操作](api/14-群操作/README.md) (`api_group.go`)
+### [14. 群操作](api/14-群操作/README.md) (`api_group_*.go`)
 群列表/成员/创建/解散/邀请/移除/公告/群名/二维码/欢迎语/转让 — **25 个接口** + 群设置 **10 个待补充**
 
 ---

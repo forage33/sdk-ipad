@@ -1,6 +1,6 @@
 # 13. 发送消息
 
-> 源文件：`api_message_send.go` / `api_message_action.go` · 接口数：20
+> 源文件：`api_message_*.go`（每接口一文件） · 接口数：20
 >
 > ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
 

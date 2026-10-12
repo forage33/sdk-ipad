@@ -1,6 +1,6 @@
 # 05. 标签
 
-> 源文件：`api_label.go` · 接口数：6
+> 源文件：`api_label_*.go`（每接口一文件） · 接口数：6
 >
 > ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
 

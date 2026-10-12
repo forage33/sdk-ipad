@@ -35,7 +35,7 @@
 ### [06. CDN 上传与下载](api/06-CDN上传与下载/README.md) (`cdn.go`)
 大文件/图片/视频/文件上传下载 — **12 个接口**（含 3 个本地上传 TODO）
 
-### [07. 联系人操作](api/07-联系人操作/README.md) (`contact.go`)
+### [07. 联系人操作](api/07-联系人操作/README.md) (`contact_add.go` / `contact_manage.go`)
 联系人列表/搜索/添加/删除/备注/置顶/免打扰/拉黑/标记/共享 — **23 个接口**
 
 ### [08. 朋友圈操作](api/08-朋友圈操作/README.md) (`moments.go`)
@@ -53,7 +53,7 @@
 ### [12. 商家收款](api/12-商家收款/README.md)
 商户列表/收款二维码/发送收款小程序 — **3 个接口**（均未封装）
 
-### [13. 发送消息](api/13-发送消息/README.md) (`message.go`)
+### [13. 发送消息](api/13-发送消息/README.md) (`message_send.go` / `message_action.go`)
 文本/图片/文件/语音/视频/链接/小程序/名片/位置/表情/@消息/群发/撤回/已读 — **20 个接口**
 
 ### [14. 群操作](api/14-群操作/README.md) (`group.go`)

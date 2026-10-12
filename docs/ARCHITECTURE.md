@@ -469,26 +469,34 @@ h.service.CallbackMsgChan <- &msg
 
 | 文件 | 职责 |
 |------|------|
-| `sdk.go` | SDK 入口、SdkConfig、SdkIPad 核心结构 |
+| `sdk.go` | SDK 入口、SdkConfig、SdkIPad 核心结构、包级接口定位指引 |
+| `sdk_interface.go` | SdkInterface 接口（业务侧使用的方法集合，供 mock/替换） |
 | `shard_manager.go` | 分片管理器、AccountContext、TTL 清理 |
 | `shared_pool.go` | 共享 Worker 池、动态扩缩容、Task 接口 |
 | `callback_dispatcher.go` | 回调分发器、Hook 接口/注册表、HookContext |
 | `dispatcher_adapter.go` | 适配器层、全局单例、HandleCallbackGlobal |
+| `callback_base.go` | 回调基础层：CallBackMsg 信封、回调类型码常量、SendMsg |
+| `callback_http.go` | 回调 HTTP 传输层适配（CallbackHTTPHandler） |
+| `callback_payload_msg.go` | 消息回调（102000）契约层：信封与 12 类消息访问器 |
+| `callback_payload_account.go` | 登录/群/联系人/断连回调契约层 |
 | `example_hooks.go` | Hook 示例、AccountHook、HookManager |
 | `http_client.go` | HTTP 客户端接口与默认实现 |
+| `flex_int64.go` | 容错整数类型（number/string 双格式兼容） |
 | `wx_init.go` | 初始化相关 API |
 | `login.go` | 登录相关 API |
-| `message.go` | 发消息 API |
+| `message_send.go` | 消息发送 API（Send* 全部发送接口） |
+| `message_action.go` | 消息操作 API（撤回/已读/语音转文字/同步） |
 | `group.go` | 群相关 API |
-| `contact.go` | 联系人 API |
+| `contact_add.go` | 联系人查找添加 API（加好友链路） |
+| `contact_manage.go` | 联系人数据与设置管理 API |
 | `account.go` | 账号操作 API |
 | `label.go` | 标签 API |
 | `moments.go` | 朋友圈 API |
 | `chat_tag.go` | 聊天标签 API |
 | `cdn.go` | CDN 相关 API |
-| `open_platform.go` | 开放平台 API |
-| `broadcast.go` | 控制台 API |
-| `test_example_test.go` | 单元测试 |
+| `broadcast.go` | 控制台群发 API |
+| `chat_msgtype.go` | 聊天消息 msgtype 常量 |
+| 测试文件 | `*_test.go`：按被测对象拆分（shard_manager / shared_pool / dispatcher / dispatcher_adapter / hook_manager / callback_payload_msg / callback_payload_account / callback_http / flex_int64 / group_qrcode） |
 
 ---
 

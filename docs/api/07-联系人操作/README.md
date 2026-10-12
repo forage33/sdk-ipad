@@ -1,6 +1,6 @@
 # 07. 联系人操作
 
-> 源文件：`contact.go` · 接口数：23
+> 源文件：`contact_add.go` / `contact_manage.go` · 接口数：23
 >
 > ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
 

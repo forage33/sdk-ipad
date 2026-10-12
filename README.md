@@ -42,7 +42,7 @@ engine.POST("/callback", gin.WrapF(
 ))
 ```
 
-业务侧通过 Hook 声明关心的回调类型（完整示例见 `example_hooks.go` 与 `test_example_test.go`）：
+业务侧通过 Hook 声明关心的回调类型（完整示例见 `example_hooks.go`；端到端测试见 `dispatcher_test.go`）：
 
 ```go
 hook := myHook // 实现 sdk_ipad.Hook 接口
@@ -81,9 +81,11 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 |---|---|
 | `wx_init.go` | 初始化相关：实例初始化（含代理配置）、回调地址设置（HTTP/RABBITMQ）、运行实例查询、连接关闭、按 VID 判运行状态 |
 | `login.go` | 登录相关：二维码获取、验证码校验、自动登录、退出登录、二次验证 |
-| `message.go` | 消息发送：文本/@、图片、文件、链接、语音、视频、表情、名片、位置、小程序、视频号、群发、消息同步、已读标记、语音转文字 |
+| `message_send.go` | 消息发送：文本/@、图片、文件、链接、语音、视频、表情、名片、位置、小程序、视频号、群发 |
+| `message_action.go` | 消息操作：撤回、已读标记、语音转文字、消息记录同步 |
 | `group.go` | 群相关：群列表、成员管理、建群、群公告、群名修改、邀请进群、群二维码、欢迎语、退群、解散 |
-| `contact.go` | 联系人：搜索添加（手机/名片/共享）、内外部联系人列表、删除、好友申请、备注、置顶/免打扰/会话管理 |
+| `contact_add.go` | 联系人查找添加：手机号搜索、搜索/名片/企微/共享好友添加、好友申请与同意、好友共享（加好友链路） |
+| `contact_manage.go` | 联系人管理：批量用户信息、内外部联系人列表、删除、备注、置顶/免打扰/标记/拉黑、会话列表 |
 | `cdn.go` | CDN 资源：网络图片/视频/文件上传、大文件上传下载、微信文件下载（含 `DownloadWechatFileResp` 字段名陷阱注释） |
 | `account.go` | 账号操作：头像设置、资料修改、个人二维码、封禁详情、对外名片、自动同意好友、企业信息查询 |
 | `moments.go` | 朋友圈：列表/详情、发布、删除、评论、点赞 |
@@ -95,8 +97,8 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 
 | 文件 | 作用 |
 |---|---|
-| `msg_ipad.go` | 回调基础层：`CallBackMsg` 信封（type/uuid/json）、回调类型码常量（100xxx 登录 / 102xxx 消息 / 115xxx 群 / 116xxx 联系人 / 130xxx 标签）、`SendMsg` 内部发送结构 |
-| `msg_types.go` | 聊天消息 `msgtype` 常量（ChatMsgText/Voice/Video/Revoke...，消息分发的分支依据） |
+| `callback_base.go` | 回调基础层：`CallBackMsg` 信封（type/uuid/json）、回调类型码常量（100xxx 登录 / 102xxx 消息 / 115xxx 群 / 116xxx 联系人 / 130xxx 标签）、`SendMsg` 内部发送结构 |
+| `chat_msgtype.go` | 聊天消息 `msgtype` 常量（ChatMsgText/Voice/Video/Revoke...，消息分发的分支依据） |
 | `callback_dispatcher.go` | `CallbackDispatcher` 回调分发器：Hook 注册（按消息类型，同类型按 Hook 优先级排序执行）、统计（DispatcherStats）、消息消费处理（消息优先级为预留，未参与调度） |
 | `dispatcher_adapter.go` | `DispatcherAdapter` 便捷封装：组装 Dispatcher + ShardManager + WorkerPool，业务侧只需 `HandleCallback(msg)` 一个入口 |
 | `shard_manager.go` | `ShardManager` 分片管理：一致性哈希将账号分片到固定分片，账号上下文（AccountContext）生命周期管理、过期清理、回调按账号路由 |
@@ -124,7 +126,14 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 
 | 文件 | 作用 |
 |---|---|
-| `test_example_test.go` | Hook 注册、分发、适配器组装的端到端使用示例（可当集成样例读） |
+| `dispatcher_test.go` | 分发器用例（Hook 注册/消费、优先级队列标签） |
+| `dispatcher_adapter_test.go` | 适配器用例（独立实例，不触碰全局单例） |
+| `hook_manager_test.go` | Hook 管理器用例 |
+| `shard_manager_test.go` | 分片管理器用例 + 基准 |
+| `shared_pool_test.go` | Worker 池用例 + 基准 |
+| `callback_payload_msg_test.go` | 消息回调契约层用例（宽容解析/双名兼容/字符串视图） |
+| `callback_payload_account_test.go` | 登录/群/联系人/断连域契约用例（严格语义/三级回退/双型兼容） |
+| `callback_http_test.go` | 回调 HTTP 传输层用例（应答协议/异步重试） |
 | `flex_int64_test.go` | `FlexInt64` 双格式解析用例 |
 | `group_qrcode_test.go` | 群二维码接口解析用例 |
 

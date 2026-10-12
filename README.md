@@ -72,7 +72,7 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 
 | 文件 | 作用 |
 |---|---|
-| `sdk.go` | 包文档与 SDK 主入口：`SdkIPad` 主结构体、`SdkConfig` 全局配置（分片/Worker 池/优先级队列/Logger 注入）、构造函数、账号上下文访问、回调入口 `HandleCallback`，附协议服务已知错误码参考表 |
+| `sdk.go` | 包文档与 SDK 主入口：`SdkIPad` 主结构体、`SdkConfig` 全局配置（分片/Worker 池/优先级队列（预留）/Logger 注入）、构造函数、账号上下文访问、回调入口 `HandleCallback`，附协议服务已知错误码参考表 |
 | `sdk_interface.go` | `SdkInterface` 接口定义：服务层使用的 SDK 方法集合（`SdkIPad` 隐式实现），供调用方 mock/替换 |
 
 ### 主动调用 API（按协议域划分，14 个模块）
@@ -97,10 +97,10 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 |---|---|
 | `msg_ipad.go` | 回调基础层：`CallBackMsg` 信封（type/uuid/json）、回调类型码常量（100xxx 登录 / 102xxx 消息 / 115xxx 群 / 116xxx 联系人 / 130xxx 标签）、`SendMsg` 内部发送结构 |
 | `msg_types.go` | 聊天消息 `msgtype` 常量（ChatMsgText/Voice/Video/Revoke...，消息分发的分支依据） |
-| `callback_dispatcher.go` | `CallbackDispatcher` 回调分发器：Hook 注册（按消息类型）、优先级路由、统计（DispatcherStats）、消息消费处理 |
+| `callback_dispatcher.go` | `CallbackDispatcher` 回调分发器：Hook 注册（按消息类型，同类型按 Hook 优先级排序执行）、统计（DispatcherStats）、消息消费处理（消息优先级为预留，未参与调度） |
 | `dispatcher_adapter.go` | `DispatcherAdapter` 便捷封装：组装 Dispatcher + ShardManager + WorkerPool，业务侧只需 `HandleCallback(msg)` 一个入口 |
 | `shard_manager.go` | `ShardManager` 分片管理：一致性哈希将账号分片到固定分片，账号上下文（AccountContext）生命周期管理、过期清理、回调按账号路由 |
-| `shared_pool.go` | `SharedWorkerPool` 动态扩缩容 goroutine 工作池：Min/MaxWorkers、队列容量、优先级队列（PriorityQueueConfig） |
+| `shared_pool.go` | `SharedWorkerPool` 动态扩缩容 goroutine 工作池：Min/MaxWorkers、队列容量、优先级队列（PriorityQueueConfig，预留未实现） |
 | `callback_http.go` | `CallbackHTTPHandler` 传输层适配：标准 `net/http` handler（JSON 信封解析 → 分发 → 失败异步重试 3 次指数退避 → 始终应答 200），与 Web 框架解耦（gin 用 `gin.WrapF` 挂载） |
 | `example_hooks.go` | Hook 接口的示例实现与 Hook 管理器，业务侧 Hook 编写模板 |
 
@@ -142,7 +142,7 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 |---|---|
 | `ShardConfig` | 分片数/最大账号数/账号 TTL/清理间隔（ShardManager） |
 | `WorkerPool` | Worker 池 Min/Max、队列容量、扩容检查间隔（SharedWorkerPool） |
-| `PriorityQueue` | 优先级档位数、每档容量、高优容量（回调分发） |
+| `PriorityQueue` | 优先级档位数、每档容量、高优容量（回调分发；**预留**：调度未实现，当前队列为单一 FIFO） |
 | `Logger` | `*zap.Logger`，宿主注入（Field 风格）；nil 时回退 `zap.L()`。SDK 不依赖宿主日志封装 |
 
 ## 子模块与发版

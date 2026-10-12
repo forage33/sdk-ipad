@@ -43,7 +43,10 @@ func DefaultWorkerPoolConfig() WorkerPoolConfig {
 	}
 }
 
-// PriorityQueueConfig 优先级队列配置。
+// PriorityQueueConfig 优先级队列配置（预留设计）。
+//
+// 当前任务队列为单一 FIFO channel，优先级调度尚未实现；
+// 本配置与 SdkConfig.PriorityQueue 均为预留，暂不影响运行时行为。
 //
 // 字段:
 //   - Priorities: 优先级数量，默认 3
@@ -73,17 +76,17 @@ func DefaultPriorityQueueConfig() PriorityQueueConfig {
 // 字段:
 //   - AccountUUID: 关联的账号 UUID
 //   - Msg: 原始消息（interface{}）
-//   - Priority: 优先级（0-低，1-中，2-高）
+//   - Priority: 优先级（0-低，1-中，2-高）（预留：仅记录，当前队列不按优先级调度）
 //   - Handler: 任务处理器
-//   - CreatedAt: 任务创建时间
-//   - Timeout: 任务处理超时时间
+//   - CreatedAt: 任务创建时间（预留：当前无消费方）
+//   - Timeout: 任务处理超时时间（预留：worker 未启用执行超时）
 type Task struct {
 	AccountUUID string
 	Msg         interface{}
-	Priority    int           // 0-低，1-中，2-高
+	Priority    int           // 0-低，1-中，2-高（预留：不参与调度）
 	Handler     TaskHandler   // 任务处理器
-	CreatedAt   time.Time     // 创建时间
-	Timeout     time.Duration // 超时时间
+	CreatedAt   time.Time     // 创建时间（预留：无消费方）
+	Timeout     time.Duration // 超时时间（预留：未启用）
 }
 
 // TaskHandler 任务处理器接口。

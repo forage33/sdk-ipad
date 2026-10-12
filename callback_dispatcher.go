@@ -41,20 +41,24 @@ type CallbackDispatcher struct {
 
 // DispatcherConfig 分发器配置。
 //
+// 注意：以下配置项目前为预留设计，分发链路（Submit → Worker 池）暂未消费，
+// 实际并发与容量由 SharedWorkerPool 配置（Min/MaxWorkers、QueueCapacity）承担；
+// 回调可靠性由 CallbackHTTPHandler 传输层重试（3 次指数退避）兜底。
+//
 // 字段:
-//   - MaxConcurrent: 最大并发处理数，默认 100
-//   - BatchSize: 批处理大小，默认 100
-//   - Timeout: 单条消息处理超时，默认 5s
-//   - RetryCount: 失败重试次数，默认 3
-//   - RetryInterval: 重试间隔，默认 100ms
-//   - DeadLetterQueue: 是否启用死信队列，默认 true
+//   - MaxConcurrent: 最大并发处理数，默认 100（预留，未消费）
+//   - BatchSize: 批处理大小，默认 100（预留，未消费）
+//   - Timeout: 单条消息处理超时，默认 5s（预留：仅透传至 Task.Timeout，执行层未启用超时）
+//   - RetryCount: 失败重试次数，默认 3（预留，未消费）
+//   - RetryInterval: 重试间隔，默认 100ms（预留，未消费）
+//   - DeadLetterQueue: 是否启用死信队列，默认 true（预留，未消费）
 type DispatcherConfig struct {
-	MaxConcurrent   int           // 最大并发处理数，默认100
-	BatchSize       int           // 批处理大小，默认100
-	Timeout         time.Duration // 处理超时，默认5s
-	RetryCount      int           // 重试次数，默认3
-	RetryInterval   time.Duration // 重试间隔，默认100ms
-	DeadLetterQueue bool          // 是否启用死信队列，默认true
+	MaxConcurrent   int           // 最大并发处理数，默认100（预留，未消费）
+	BatchSize       int           // 批处理大小，默认100（预留，未消费）
+	Timeout         time.Duration // 处理超时，默认5s（预留：透传 Task.Timeout，未启用）
+	RetryCount      int           // 重试次数，默认3（预留，未消费）
+	RetryInterval   time.Duration // 重试间隔，默认100ms（预留，未消费）
+	DeadLetterQueue bool          // 是否启用死信队列，默认true（预留，未消费）
 }
 
 // DefaultDispatcherConfig 返回默认分发器配置。
@@ -79,7 +83,7 @@ func DefaultDispatcherConfig() DispatcherConfig {
 //   - TotalReceived: 累计接收消息数
 //   - TotalProcessed: 累计成功处理数
 //   - TotalFailed: 累计失败数
-//   - TotalRetried: 累计重试数
+//   - TotalRetried: 累计重试数（预留：当前无重试机制写入，恒为 0）
 //   - AvgProcessTime: 平均处理耗时（纳秒，移动平均）
 //   - CurrentQueueSize: 当前队列中的消息数
 //   - MaxQueueSize: 历史队列峰值
@@ -88,7 +92,7 @@ type DispatcherStats struct {
 	TotalReceived    int64
 	TotalProcessed   int64
 	TotalFailed      int64
-	TotalRetried     int64
+	TotalRetried     int64 // 预留：无重试机制写入，恒为 0
 	AvgProcessTime   int64 // 纳秒，使用 atomic 操作
 	CurrentQueueSize int32
 	MaxQueueSize     int32
@@ -336,6 +340,9 @@ func (d *CallbackDispatcher) HandleCallback(msg *CallBackMsg) error {
 }
 
 // getMessagePriority 根据消息类型返回处理优先级。
+//
+// 注意：优先级为预留能力——当前仅写入 Task.Priority 供调试参考，
+// 任务队列为单一 FIFO，未参与调度排序（见 PriorityQueueConfig）。
 //
 // 优先级分为三档:
 //   - 2（高）: 登录回调、异常断开等需要立即响应的消息

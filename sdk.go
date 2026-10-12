@@ -43,7 +43,7 @@ type SdkIPad struct {
 type SdkConfig struct {
 	ShardConfig   ShardConfig         // 分片配置
 	WorkerPool    WorkerPoolConfig    // Worker 池配置
-	PriorityQueue PriorityQueueConfig // 优先级队列配置
+	PriorityQueue PriorityQueueConfig // 优先级队列配置（预留：调度未实现，见 PriorityQueueConfig 注释）
 
 	// Logger 日志器（zap Field 风格），由宿主应用注入；为 nil 时回退全局 zap.L()。
 	// SDK 不依赖任何宿主项目的日志封装，以保证本包可独立编译复用。

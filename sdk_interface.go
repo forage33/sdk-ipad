@@ -1,6 +1,6 @@
 package sdk_ipad
 
-// SdkInterface 定义业务侧使用的 SDK 方法集合（ipad-and-customer 服务层、
+// SdkInterface 定义业务侧使用的 SDK 方法集合（ipad_and_customer 服务层、
 // admin 群管理 Handler 等调用方均以此接口类型持有 SDK 实例）。
 // SdkIPad 已实现所有这些方法，Go 隐式接口自动满足。
 type SdkInterface interface {

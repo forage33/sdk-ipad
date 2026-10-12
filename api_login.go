@@ -1,4 +1,4 @@
-// login.go 登录相关接口。
+// api_login.go 登录相关接口。
 // 提供二维码获取、验证码校验、自动登录、退出登录和二次验证等功能。
 
 package sdk_ipad

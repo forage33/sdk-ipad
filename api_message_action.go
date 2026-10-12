@@ -1,4 +1,4 @@
-// message_action.go 消息操作相关接口（发送之外的消息与会话操作）。
+// api_message_action.go 消息操作相关接口（发送之外的消息与会话操作）。
 // 提供消息撤回、标为已读、语音转文字、消息记录同步等功能。
 
 package sdk_ipad

@@ -1,4 +1,4 @@
-// cdn.go CDN 相关接口。
+// api_cdn.go CDN 相关接口。
 // 提供网络图片上传、网络视频上传、网络文件上传、大文件上传下载和微信文件下载等功能。
 
 package sdk_ipad

@@ -1,4 +1,4 @@
-// broadcast.go 控制台群发操作相关接口。
+// api_broadcast.go 控制台群发操作相关接口。
 // 提供群发消息确认等功能。
 
 package sdk_ipad

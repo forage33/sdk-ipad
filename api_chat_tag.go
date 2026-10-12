@@ -1,4 +1,4 @@
-// chat_tag.go 聊天标签操作相关接口。
+// api_chat_tag.go 聊天标签操作相关接口。
 // 提供聊天标签的增删改等功能。
 
 package sdk_ipad

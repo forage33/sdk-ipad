@@ -5,22 +5,22 @@
 //
 // 一、主动调用 API（编号与 docs/api 域一致，按方法名前缀可快速定位文件）：
 //
-//  01. 初始化       - wx_init.go        InItWXWork/SetCallBackURL/GetRunClient 等
-//  02. 登录         - login.go          GetQrCode/CheckCode/AutomaticLogin 等
-//  03. 账号操作     - account.go        头像/资料/二维码/封禁/企业信息
+//  01. 初始化       - api_wx_init.go          InItWXWork/SetCallBackURL/GetRunClient 等
+//  02. 登录         - api_login.go            GetQrCode/CheckCode/AutomaticLogin 等
+//  03. 账号操作     - api_account.go          头像/资料/二维码/封禁/企业信息
 //  04. 开放平台     - 未实现
-//  05. 标签         - label.go          *Label* 企业标签增删改查
-//  06. CDN          - cdn.go            Cdn*/Upload*/Download*/*BigFile* 上传下载
-//  07. 联系人操作   - contact_add.go    搜索/添加/申请/共享（加好友链路）
-//     contact_manage.go 资料/列表/设置/拉黑/删除
-//  08. 朋友圈       - moments.go        *Sns*/PostPyq
-//  09. 控制台群发   - broadcast.go      ConfirmGroupSend
-//  10. 聊天标签     - chat_tag.go       ModSessionTag
+//  05. 标签         - api_label.go            *Label* 企业标签增删改查
+//  06. CDN          - api_cdn.go              Cdn*/Upload*/Download*/*BigFile* 上传下载
+//  07. 联系人操作   - api_contact_add.go      搜索/添加/申请/共享（加好友链路）
+//     api_contact_manage.go   资料/列表/设置/拉黑/删除
+//  08. 朋友圈       - api_moments.go          *Sns*/PostPyq
+//  09. 控制台群发   - api_broadcast.go        ConfirmGroupSend
+//  10. 聊天标签     - api_chat_tag.go         ModSessionTag
 //  11. 客服管理     - 未实现
 //  12. 商家收款     - 未实现
-//  13. 发送消息     - message_send.go   Send* 全部发送接口
-//     message_action.go RevokeMsg/MarkAsRead/SpeechToTextEntity/SyncAllData
-//  14. 群操作       - group.go          *Room*/*Group* 创建/邀请/公告/二维码/欢迎语等
+//  13. 发送消息     - api_message_send.go     Send* 全部发送接口
+//     api_message_action.go   RevokeMsg/MarkAsRead/SpeechToTextEntity/SyncAllData
+//  14. 群操作       - api_group.go            *Room*/*Group* 创建/邀请/公告/二维码/欢迎语等
 //
 // 二、协议服务回调消息链路：
 //

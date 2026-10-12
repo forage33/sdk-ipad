@@ -1,4 +1,4 @@
-// wx_init.go 初始化相关接口。
+// api_wx_init.go 初始化相关接口。
 // 提供企业微信 iPad 协议的实例初始化、回调设置、运行状态查询和连接关闭等功能。
 
 package sdk_ipad

@@ -1,6 +1,6 @@
-// message_send.go 消息发送相关接口。
+// api_message_send.go 消息发送相关接口。
 // 提供文本、图片、文件、链接、语音、视频、表情、名片、位置、@消息、
-// 小程序、视频号、群发等消息发送功能（撤回/已读/语音转文字/同步见 message_action.go）。
+// 小程序、视频号、群发等消息发送功能（撤回/已读/语音转文字/同步见 api_message_action.go）。
 
 package sdk_ipad
 

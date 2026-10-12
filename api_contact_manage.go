@@ -1,6 +1,6 @@
-// contact_manage.go 联系人数据与设置管理接口。
+// api_contact_manage.go 联系人数据与设置管理接口。
 // 提供用户信息批量查询、内外部联系人列表、删除联系人、会话与关系设置
-// （置顶/免打扰/标记/拉黑）、会话列表、备注管理等功能（查找添加类见 contact_add.go）。
+// （置顶/免打扰/标记/拉黑）、会话列表、备注管理等功能（查找添加类见 api_contact_add.go）。
 
 package sdk_ipad
 

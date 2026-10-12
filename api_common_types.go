@@ -196,3 +196,17 @@ type RoomMember struct {
 	InviteUserId int64  `json:"invite_user_id"`
 	CorpId       int64  `json:"corp_id"`
 }
+
+// VidOpenIdPair 企业用户 id 与开放平台 id（external_userid）的对应关系。
+// 用于 Vid2UserId / UserId2Vid / Vid2OpenUserTripartiteId 的返回数据。
+type VidOpenIdPair struct {
+	UserID int64  `json:"user_id"`
+	OpenID string `json:"openid"`
+}
+
+// RoomChatIdPair 群 id 与开放平台 chatid 的对应关系。
+// 用于 RoomIdToChatId / ChatIdToRoomId 的返回数据。
+type RoomChatIdPair struct {
+	RoomID int64  `json:"room_id"`
+	ChatID string `json:"chatid"`
+}

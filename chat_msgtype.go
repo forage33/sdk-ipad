@@ -1,4 +1,4 @@
-// msg_types.go 聊天消息类型常量定义。
+// chat_msgtype.go 聊天消息类型常量定义。
 // 定义企业微信回调中聊天消息的 msgtype 字段值。
 
 package sdk_ipad

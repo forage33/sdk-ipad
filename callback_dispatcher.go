@@ -203,7 +203,7 @@ func (d *CallbackDispatcher) Stop() {
 // 同一消息类型的 Hook 按 Priority 从高到低排序。
 //
 // 参数:
-//   - msgType: 消息类型（对应 msg_ipad.go 中的常量）
+//   - msgType: 消息类型（对应 callback_base.go 中的常量）
 //   - hook: 实现 Hook 接口的实例
 //
 // 返回: error 始终为 nil

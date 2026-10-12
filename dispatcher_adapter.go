@@ -92,7 +92,7 @@ func (da *DispatcherAdapter) HandleCallback(msg *CallBackMsg) error {
 // RegisterHook 注册 Hook 到指定消息类型。
 //
 // 参数:
-//   - msgType: 消息类型（对应 msg_ipad.go 中的常量）
+//   - msgType: 消息类型（对应 callback_base.go 中的常量）
 //   - hook: 实现 Hook 接口的实例
 //
 // 返回: error 注册失败时返回错误

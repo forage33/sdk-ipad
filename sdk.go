@@ -3,29 +3,34 @@
 // 本包通过 HTTP 调用后端协议服务，实现企业微信 iPad 端的各项功能操作，
 // 同时提供回调消息分发、分片管理、Worker 池等基础设施。
 //
-// 一、调用协议服务，一共十四个模块：
+// 一、主动调用 API（编号与 docs/api 域一致，按方法名前缀可快速定位文件）：
 //
-//  1. 初始化相关   - wx_init.go
-//  2. 登录相关     - login.go
-//  3. 发消息       - message.go
-//  4. 群相关       - group.go
-//  5. 开放平台相关 - open_platform.go（未实现）
-//  6. 标签相关     - label.go
-//  7. CDN 相关     - cdn.go
-//  8. 联系人相关   - contact.go
-//  9. 账号操作相关 - account.go
-//  10. 朋友圈相关   - moments.go
-//  11. 群发相关     - broadcast.go
-//  12. 聊天标签相关 - chat_tag.go
-//  13. 客服管理相关 - 未实现
-//  14. 商家收款相关 - 未实现
+//  01. 初始化       - wx_init.go        InItWXWork/SetCallBackURL/GetRunClient 等
+//  02. 登录         - login.go          GetQrCode/CheckCode/AutomaticLogin 等
+//  03. 账号操作     - account.go        头像/资料/二维码/封禁/企业信息
+//  04. 开放平台     - 未实现
+//  05. 标签         - label.go          *Label* 企业标签增删改查
+//  06. CDN          - cdn.go            Cdn*/Upload*/Download*/*BigFile* 上传下载
+//  07. 联系人操作   - contact_add.go    搜索/添加/申请/共享（加好友链路）
+//     contact_manage.go 资料/列表/设置/拉黑/删除
+//  08. 朋友圈       - moments.go        *Sns*/PostPyq
+//  09. 控制台群发   - broadcast.go      ConfirmGroupSend
+//  10. 聊天标签     - chat_tag.go       ModSessionTag
+//  11. 客服管理     - 未实现
+//  12. 商家收款     - 未实现
+//  13. 发送消息     - message_send.go   Send* 全部发送接口
+//     message_action.go RevokeMsg/MarkAsRead/SpeechToTextEntity/SyncAllData
+//  14. 群操作       - group.go          *Room*/*Group* 创建/邀请/公告/二维码/欢迎语等
 //
-// 二、协议服务器回调消息模块：
+// 二、协议服务回调消息链路：
 //
-//  1. 登录回调      2. 消息回调
-//  3. 群回调        4. 联系人回调
-//  5. 控制台任务    6. 标签变动回调
-//  7. 聊天标签回调  8. 断开回调
+//	收包     callback_base.go（CallBackMsg 信封 + 回调类型码常量）
+//	传输     callback_http.go（CallbackHTTPHandler：解析 → 分发 → 失败异步重试）
+//	分发     callback_dispatcher.go / dispatcher_adapter.go（Hook 注册、分片路由、Worker 池）
+//	契约     callback_payload_msg.go（消息域 As* 访问器）/ callback_payload_account.go（登录/群/联系人/断连域）
+//	消息类型 chat_msgtype.go（msgtype 常量：ChatMsgText/Voice/Video 等）
+//
+// 回调域覆盖：登录/消息/群/联系人/控制台任务/标签变动/聊天标签/断开。
 package sdk_ipad
 
 import "go.uber.org/zap"

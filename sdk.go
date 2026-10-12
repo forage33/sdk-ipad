@@ -6,33 +6,33 @@
 // 一、主动调用 API（每接口一文件，命名规则 api_<域>_<方法名snake_case>.go；
 // 域编号与 docs/api 一致）：
 //
-//  01. 初始化       api_wx_init_*.go       7 接口（InItWXWork/SetCallBackURL/GetRunClient 等）
+//  01. 初始化       api_wx_init_*.go         7 接口（InItWXWork/SetCallBackURL/GetRunClient 等）
 //
-//  02. 登录         api_login_*.go         5 接口（GetQrCode/CheckCode/AutomaticLogin 等）
+//  02. 登录         api_login_*.go           5 接口（GetQrCode/CheckCode/AutomaticLogin 等）
 //
-//  03. 账号操作     api_account_*.go       8 接口（头像/资料/二维码/封禁/企业信息）
+//  03. 账号操作     api_account_*.go         8 接口（头像/资料/二维码/封禁/企业信息）
 //
-//  04. 开放平台     未实现
+//  04. 开放平台     api_open_platform_*.go   5 接口（企业/开放平台 id 互转、群 chatid 互转）
 //
-//  05. 标签         api_label_*.go         6 接口（*Label* 增删改查）
+//  05. 标签         api_label_*.go           6 接口（*Label* 增删改查）
 //
-//  06. CDN          api_cdn_*.go           9 接口（Cdn*/Upload*/Download*/*BigFile*）
+//  06. CDN          api_cdn_*.go             12 接口（上传/下载/大文件/初始化与鉴权）
 //
-//  07. 联系人操作   api_contact_*.go       23 接口（搜索/添加/列表/设置/拉黑）
+//  07. 联系人操作   api_contact_*.go         23 接口（搜索/添加/列表/设置/拉黑）
 //
-//  08. 朋友圈       api_moments_*.go       7 接口（*Sns*/PostPyq）
+//  08. 朋友圈       api_moments_*.go         7 接口（*Sns*/PostPyq）
 //
-//  09. 控制台群发   api_broadcast_*.go     1 接口（ConfirmGroupSend）
+//  09. 控制台群发   api_broadcast_*.go       1 接口（ConfirmGroupSend）
 //
-//  10. 聊天标签     api_chat_tag_*.go      1 接口（ModSessionTag）
+//  10. 聊天标签     api_chat_tag_*.go        1 接口（ModSessionTag）
 //
 //  11. 客服管理     未实现
 //
 //  12. 商家收款     未实现
 //
-//  13. 发送消息     api_message_*.go       20 接口（发送/撤回/已读/语音转文字/同步）
+//  13. 发送消息     api_message_*.go         21 接口（发送/撤回/已读/语音转文字/同步/引用）
 //
-//  14. 群操作       api_group_*.go         25 接口（*Room*/*Group*）
+//  14. 群操作       api_group_*.go           25 接口（*Room*/*Group*）
 //
 //     例：SendTextMsg → api_message_send_text_msg.go；RevokeMsg → api_message_revoke_msg.go
 //     跨接口共享类型集中在 api_common_types.go（CommonContactResp/CommonGroupResp 等）

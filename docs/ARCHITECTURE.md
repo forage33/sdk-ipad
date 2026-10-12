@@ -482,7 +482,7 @@ h.service.CallbackMsgChan <- &msg
 | `example_hooks.go` | Hook 示例、AccountHook、HookManager |
 | `http_client.go` | HTTP 客户端接口与默认实现 |
 | `flex_int64.go` | 容错整数类型（number/string 双格式兼容） |
-| `api_*.go`（112 个） | 主动调用 API：每接口一文件，命名 `api_<域>_<方法名snake_case>.go`（SendTextMsg → api_message_send_text_msg.go）；域编号与 docs/api 一致 |
+| `api_*.go`（121 个） | 主动调用 API：每接口一文件，命名 `api_<域>_<方法名snake_case>.go`（SendTextMsg → api_message_send_text_msg.go）；域编号与 docs/api 一致 |
 | `api_common_types.go` | 跨接口共享数据结构（CommonContactResp / CommonGroupResp / Sns* 等） |
 | `chat_msgtype.go` | 聊天消息 msgtype 常量 |
 | 测试文件 | `*_test.go`：按被测对象拆分（shard_manager / shared_pool / dispatcher / dispatcher_adapter / hook_manager / callback_payload_msg / callback_payload_account / callback_http / flex_int64 / group_qrcode） |

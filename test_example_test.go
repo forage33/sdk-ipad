@@ -1,6 +1,7 @@
 package sdk_ipad
 
 import (
+	"sync"
 	"testing"
 	"time"
 )
@@ -142,9 +143,14 @@ func TestCallbackDispatcher(t *testing.T) {
 	}
 }
 
-// TestDispatcherAdapter 测试分发器适配器
+// TestDispatcherAdapter 测试分发器适配器。
+// 使用独立实例而非全局单例：单例被 Stop 后 sync.Once 不会重建，
+// -count 多轮运行时会因跨轮单例状态而失败。
 func TestDispatcherAdapter(t *testing.T) {
-	adapter := GetDefaultAdapter()
+	adapter := NewDispatcherAdapter(NewSdkIPad(), DefaultDispatcherConfig())
+	if err := adapter.Start(); err != nil {
+		t.Fatalf("adapter.Start failed: %v", err)
+	}
 	defer adapter.Stop()
 
 	// 注册测试Hook
@@ -231,7 +237,9 @@ func TestPriorityQueue(t *testing.T) {
 	pool := NewSharedWorkerPool(workerPoolConfig)
 
 	dispatcher := NewCallbackDispatcher(nil, sm, pool, dispatcherConfig)
-	dispatcher.Start()
+	if err := dispatcher.Start(); err != nil {
+		t.Fatalf("dispatcher.Start failed: %v", err)
+	}
 	defer dispatcher.Stop()
 
 	// 创建不同优先级的消息
@@ -245,16 +253,18 @@ func TestPriorityQueue(t *testing.T) {
 		{"uuid-3", GroupNameChange, 0}, // 低优先级
 	}
 
-	// 注册测试Hook以验证处理顺序
-	processed := make(chan struct {
-		uuid     string
-		priority int
-	}, 3)
-
-	hook := &testPriorityHook{processed: processed}
-	dispatcher.RegisterHook(ScanReturn, hook)
-	dispatcher.RegisterHook(ApplyFriend, hook)
-	dispatcher.RegisterHook(GroupNameChange, hook)
+	// 注册测试Hook以验证处理顺序（mutex 计数收集，
+	// 替代 channel 收集：close/send 在异步分发下必然竞态，-race 可复现）
+	hook := &testPriorityHook{}
+	if err := dispatcher.RegisterHook(ScanReturn, hook); err != nil {
+		t.Fatalf("RegisterHook(ScanReturn) failed: %v", err)
+	}
+	if err := dispatcher.RegisterHook(ApplyFriend, hook); err != nil {
+		t.Fatalf("RegisterHook(ApplyFriend) failed: %v", err)
+	}
+	if err := dispatcher.RegisterHook(GroupNameChange, hook); err != nil {
+		t.Fatalf("RegisterHook(GroupNameChange) failed: %v", err)
+	}
 
 	// 发送消息
 	for _, msg := range messages {
@@ -268,21 +278,18 @@ func TestPriorityQueue(t *testing.T) {
 		}
 	}
 
-	// 等待所有消息处理完成
-	time.Sleep(500 * time.Millisecond)
-
-	// 关闭通道并检查处理结果
-	close(processed)
+	// 等待所有消息处理完成（轮询计数而非固定 Sleep：
+	// 固定等待会与异步分发时序竞态，-race 模式可复现）
+	deadline := time.Now().Add(2 * time.Second)
+	for hook.Count() < len(messages) && time.Now().Before(deadline) {
+		time.Sleep(5 * time.Millisecond)
+	}
 
 	// 理论上高优先级消息应该先处理，但由于并发性，顺序可能不严格
 	// 这里主要验证所有消息都被处理了
-	count := 0
-	for range processed {
-		count++
-	}
-
-	if count < len(messages) {
-		t.Errorf("Expected %d messages processed, got %d", len(messages), count)
+	if count := hook.Count(); count != len(messages) {
+		t.Errorf("Expected %d messages processed, got %d (handled: %v)",
+			len(messages), count, hook.Handled())
 	}
 }
 
@@ -294,24 +301,45 @@ func (h *testTaskHandler) Handle(task *Task) error {
 	return nil
 }
 
-// testPriorityHook 测试优先级Hook
+// testPriorityHook 测试优先级Hook：mutex 保护记录已处理消息，
+// 通过 Count/Handled 线程安全读取（异步 worker 调用 Handle）。
 type testPriorityHook struct {
-	processed chan struct {
+	mu      sync.Mutex
+	records []struct {
 		uuid     string
 		priority int
 	}
 }
 
 func (h *testPriorityHook) Handle(ctx *HookContext, msg *CallBackMsg) error {
-	// 记录处理的消息
-	h.processed <- struct {
+	h.mu.Lock()
+	defer h.mu.Unlock()
+	h.records = append(h.records, struct {
 		uuid     string
 		priority int
 	}{
 		uuid:     msg.UUID,
 		priority: ctx.AccountCtx.priority,
-	}
+	})
 	return nil
+}
+
+// Count 已处理消息数（线程安全）。
+func (h *testPriorityHook) Count() int {
+	h.mu.Lock()
+	defer h.mu.Unlock()
+	return len(h.records)
+}
+
+// Handled 已处理消息的 uuid 列表（线程安全，调试输出用）。
+func (h *testPriorityHook) Handled() []string {
+	h.mu.Lock()
+	defer h.mu.Unlock()
+	uuids := make([]string, 0, len(h.records))
+	for _, r := range h.records {
+		uuids = append(uuids, r.uuid)
+	}
+	return uuids
 }
 
 func (h *testPriorityHook) Priority() int {

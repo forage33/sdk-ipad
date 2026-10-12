@@ -11,6 +11,8 @@ package sdk_ipad
 
 import (
 	"sync"
+
+	"go.uber.org/zap"
 )
 
 // DispatcherAdapter 分发器适配器。
@@ -156,7 +158,9 @@ func GetDefaultAdapter() *DispatcherAdapter {
 	defaultAdapterOnce.Do(func() {
 		sdk := NewSdkIPad()
 		defaultAdapter = NewDispatcherAdapter(sdk, DefaultDispatcherConfig())
-		defaultAdapter.Start()
+		if err := defaultAdapter.Start(); err != nil {
+			sdk.logger.Error("default dispatcher adapter start failed", zap.Error(err))
+		}
 	})
 	return defaultAdapter
 }

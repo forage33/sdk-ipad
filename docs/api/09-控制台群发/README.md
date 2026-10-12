@@ -1,6 +1,6 @@
 # 09. 控制台群发
 
-> 源文件：`broadcast.go` · 接口数：6（含 5 个待补全/未封装）
+> 源文件：`api_broadcast.go` · 接口数：6（含 5 个待补全/未封装）
 >
 > ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
 

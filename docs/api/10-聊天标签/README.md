@@ -1,6 +1,6 @@
 # 10. 聊天标签
 
-> 源文件：`chat_tag.go` · 接口数：4（含 3 个待补全/未封装）
+> 源文件：`api_chat_tag.go` · 接口数：4（含 3 个待补全/未封装）
 >
 > ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
 

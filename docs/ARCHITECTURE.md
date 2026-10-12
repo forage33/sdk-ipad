@@ -482,19 +482,19 @@ h.service.CallbackMsgChan <- &msg
 | `example_hooks.go` | Hook 示例、AccountHook、HookManager |
 | `http_client.go` | HTTP 客户端接口与默认实现 |
 | `flex_int64.go` | 容错整数类型（number/string 双格式兼容） |
-| `wx_init.go` | 初始化相关 API |
-| `login.go` | 登录相关 API |
-| `message_send.go` | 消息发送 API（Send* 全部发送接口） |
-| `message_action.go` | 消息操作 API（撤回/已读/语音转文字/同步） |
-| `group.go` | 群相关 API |
-| `contact_add.go` | 联系人查找添加 API（加好友链路） |
-| `contact_manage.go` | 联系人数据与设置管理 API |
-| `account.go` | 账号操作 API |
-| `label.go` | 标签 API |
-| `moments.go` | 朋友圈 API |
-| `chat_tag.go` | 聊天标签 API |
-| `cdn.go` | CDN 相关 API |
-| `broadcast.go` | 控制台群发 API |
+| `api_wx_init.go` | 初始化相关 API |
+| `api_login.go` | 登录相关 API |
+| `api_message_send.go` | 消息发送 API（Send* 全部发送接口） |
+| `api_message_action.go` | 消息操作 API（撤回/已读/语音转文字/同步） |
+| `api_group.go` | 群相关 API |
+| `api_contact_add.go` | 联系人查找添加 API（加好友链路） |
+| `api_contact_manage.go` | 联系人数据与设置管理 API |
+| `api_account.go` | 账号操作 API |
+| `api_label.go` | 标签 API |
+| `api_moments.go` | 朋友圈 API |
+| `api_chat_tag.go` | 聊天标签 API |
+| `api_cdn.go` | CDN 相关 API |
+| `api_broadcast.go` | 控制台群发 API |
 | `chat_msgtype.go` | 聊天消息 msgtype 常量 |
 | 测试文件 | `*_test.go`：按被测对象拆分（shard_manager / shared_pool / dispatcher / dispatcher_adapter / hook_manager / callback_payload_msg / callback_payload_account / callback_http / flex_int64 / group_qrcode） |
 

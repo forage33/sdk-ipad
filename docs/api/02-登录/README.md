@@ -1,6 +1,6 @@
 # 02. 登录
 
-> 源文件：`login.go` · 接口数：4
+> 源文件：`api_login.go` · 接口数：4
 >
 > ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
 

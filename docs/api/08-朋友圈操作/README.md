@@ -1,6 +1,6 @@
 # 08. 朋友圈操作
 
-> 源文件：`moments.go` · 接口数：7
+> 源文件：`api_moments.go` · 接口数：7
 >
 > ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
 

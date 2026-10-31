@@ -1,6 +1,9 @@
 package sdk_ipad
 
-import "io"
+import (
+	"io"
+	"time"
+)
 
 // SdkInterface 定义业务侧使用的 SDK 方法集合（ipad_and_customer 服务层、
 // admin 群管理 Handler 等调用方均以此接口类型持有 SDK 实例）。
@@ -31,6 +34,8 @@ type SdkInterface interface {
 	// 大文件上传（朋友圈图片等媒体必须走大文件上传，不能走 CDN 上传）
 	GetBigAuthkey(host, uuid string) (*GetBigAuthkeyResp, error)
 	BigUploadFileIntegration(host, uuid, authKey, fileKey string, file io.Reader, fileName string) (*BigUploadFileResp, error)
+	// BigUploadFileIntegrationWithTimeout 单次指定上传超时（大图上传可能远超全局 30s）
+	BigUploadFileIntegrationWithTimeout(host, uuid, authKey, fileKey string, file io.Reader, fileName string, timeout time.Duration) (*BigUploadFileResp, error)
 	C2CToWwfileId(host, uuid, fileID string, fileSize int64, fileKey, fileMD5, fileName string) (*C2CToWwfileIdResp, error)
 
 	// 联系人

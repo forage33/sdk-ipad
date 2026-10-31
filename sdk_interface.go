@@ -1,5 +1,7 @@
 package sdk_ipad
 
+import "io"
+
 // SdkInterface 定义业务侧使用的 SDK 方法集合（ipad_and_customer 服务层、
 // admin 群管理 Handler 等调用方均以此接口类型持有 SDK 实例）。
 // SdkIPad 已实现所有这些方法，Go 隐式接口自动满足。
@@ -25,6 +27,11 @@ type SdkInterface interface {
 	UploadCdnVideoLinkIntegration(host, uuid, url, fileName, videoImgUrl string) (*UploadVideoResp, error)
 	DownloadWeChatFile(host, uuid, url, aesKey, authKey, fileName string, size int64) (*DownloadWechatFileResp, error)
 	DownloadFile(host, uuid, fileId, aesKey, fileName string, fileType int, size int64) (*DownloadFileResp, error)
+
+	// 大文件上传（朋友圈图片等媒体必须走大文件上传，不能走 CDN 上传）
+	GetBigAuthkey(host, uuid string) (*GetBigAuthkeyResp, error)
+	BigUploadFileIntegration(host, uuid, authKey, fileKey string, file io.Reader, fileName string) (*BigUploadFileResp, error)
+	C2CToWwfileId(host, uuid, fileID string, fileSize int64, fileKey, fileMD5, fileName string) (*C2CToWwfileIdResp, error)
 
 	// 联系人
 	GetUserInfoByVids(host, uuid string, vIDs []int64) (*UserInfoResp, error)

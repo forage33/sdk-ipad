@@ -2,7 +2,7 @@
 
 > 契约层参考：`callback_payload_account.go` · 回调数：4
 >
-> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 个人/企业标签新增、删除回调。
 

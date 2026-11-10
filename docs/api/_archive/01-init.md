@@ -1,4 +1,4 @@
-> ← [返回文档索引](../../INDEX.md) | [架构文档](../../ARCHITECTURE.md)
+> ← [返回文档索引](../../INDEX.md) | [架构文档](../../../ARCHITECTURE.md)
 ## 一、初始化 (wx_init.go)
 
 ### 1.1 初始化企业微信 ✅ `InItWXWork`

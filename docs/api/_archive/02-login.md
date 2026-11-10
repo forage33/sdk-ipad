@@ -1,4 +1,4 @@
-> ← [返回文档索引](../../INDEX.md) | [架构文档](../../ARCHITECTURE.md)
+> ← [返回文档索引](../../INDEX.md) | [架构文档](../../../ARCHITECTURE.md)
 ## 二、登录 (login.go)
 
 ### 2.1 获取登录二维码 ✅ `GetQrCode`

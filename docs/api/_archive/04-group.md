@@ -1,4 +1,4 @@
-> ← [返回文档索引](../../INDEX.md) | [架构文档](../../ARCHITECTURE.md)
+> ← [返回文档索引](../../INDEX.md) | [架构文档](../../../ARCHITECTURE.md)
 ## 四、群操作 (group.go)
 
 ### 4. 1 获取客户群列表 [已封装: GetChatroomMembers]

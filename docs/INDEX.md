@@ -1,12 +1,14 @@
 # sdk-ipad 文档索引
 
 > sdk-ipad 是企业微信 iPad 协议的核心 SDK 包，封装了协议服务的 HTTP API 调用和回调消息处理。
+>
+> ← [模块 README](../README.md) · [架构文档](../ARCHITECTURE.md)
 
 ## 文档目录
 
 | 文档 | 说明 |
 |------|------|
-| [ARCHITECTURE.md](ARCHITECTURE.md) | 架构设计文档（分片管理、Worker 池、Hook 机制） |
+| [ARCHITECTURE.md](../ARCHITECTURE.md) | 架构设计文档（分片管理、Worker 池、Hook 机制），位于模块根目录 |
 | [api/](api/README.md) | API 接口文档（每个请求路由一个独立文档，按域分目录） |
 | [callback/](callback/README.md) | 回调消息文档（每个回调事件一个独立文档，按域分目录） |
 

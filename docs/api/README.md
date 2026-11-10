@@ -3,7 +3,7 @@
 > 主动调用企微 iPad 协议服务的全部 HTTP 接口：按协议域分目录组织，每个请求路由一个独立文档。
 > 数据来源：ShowDoc (https://www.showdoc.com.cn/1889765213630885)
 >
-> ← [文档索引](../INDEX.md) · [架构文档](../ARCHITECTURE.md) · [模块 README](../../README.md)
+> ← [文档索引](../INDEX.md) · [架构文档](../../ARCHITECTURE.md) · [模块 README](../../README.md)
 
 | 域 | 源文件 | 接口数 | 说明 |
 |----|--------|--------|------|

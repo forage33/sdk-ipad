@@ -1,4 +1,4 @@
-> ← [返回文档索引](../../INDEX.md) | [架构文档](../../ARCHITECTURE.md)
+> ← [返回文档索引](../../INDEX.md) | [架构文档](../../../ARCHITECTURE.md)
 ## 附：SDK 已有但文档中未明确分类的方法
 
 | SDK方法 | API路径 | 说明 |

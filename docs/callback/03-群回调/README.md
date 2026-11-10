@@ -2,7 +2,7 @@
 
 > 契约层参考：`callback_payload_account.go` · 回调数：9
 >
-> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 群新增/移除/邀请/退出/改名/转让/管理员/解散/群变动回调。
 

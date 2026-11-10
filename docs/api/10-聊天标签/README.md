@@ -2,7 +2,7 @@
 
 > 源文件：`api_chat_tag_*.go`（每接口一文件） · 接口数：4（含 3 个待补全/未封装）
 >
-> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 聊天标签增删改与查询。
 

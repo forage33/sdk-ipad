@@ -2,7 +2,7 @@
 
 > 源文件：`api_contact_*.go`（每接口一文件） · 接口数：23
 >
-> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 联系人列表/搜索/添加/删除/备注/置顶/免打扰/拉黑/标记/共享。
 

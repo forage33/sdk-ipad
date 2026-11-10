@@ -2,7 +2,7 @@
 
 > 源文件：`api_cdn_*.go`（每接口一文件） · 接口数：15（含 3 个待补全/未封装）
 >
-> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 大文件/图片/视频/文件的上传与下载（本地文件上传链路为 TODO）。
 

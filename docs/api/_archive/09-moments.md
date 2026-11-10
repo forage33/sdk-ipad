@@ -1,4 +1,4 @@
-> ← [返回文档索引](../../INDEX.md) | [架构文档](../../ARCHITECTURE.md)
+> ← [返回文档索引](../../INDEX.md) | [架构文档](../../../ARCHITECTURE.md)
 ## 十、朋友圈操作 (moments.go)
 
 ### 10.1 获取朋友圈列表 ✅ `GetSnsList`

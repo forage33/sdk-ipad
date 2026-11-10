@@ -2,7 +2,7 @@
 
 > 源文件：`api_account_*.go`（每接口一文件） · 接口数：8
 >
-> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 账号详情/二维码/头像/企业信息/封禁原因/自动同意。
 

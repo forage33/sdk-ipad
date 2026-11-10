@@ -2,7 +2,7 @@
 
 > 源文件：`api_open_platform_*.go`（每接口一文件） · 接口数：5
 >
-> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 企业用户 id 与开放平台 id（external_userid）互转、群 id 与开放平台 chatid 互转。
 

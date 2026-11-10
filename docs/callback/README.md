@@ -3,7 +3,7 @@
 > 协议服务经 `/callback` 推送的全部回调消息：按域分目录组织，每个回调事件一个独立文档（契约层字段名的权威出处）。
 > 数据来源：ShowDoc (https://www.showdoc.com.cn/1889765213630885)
 >
-> ← [文档索引](../INDEX.md) · [架构文档](../ARCHITECTURE.md) · [模块 README](../../README.md)
+> ← [文档索引](../INDEX.md) · [架构文档](../../ARCHITECTURE.md) · [模块 README](../../README.md)
 
 | 域 | 契约层参考 | 回调数 | 说明 |
 |----|------------|--------|------|

@@ -2,7 +2,7 @@
 
 > 源文件：`api_label_*.go`（每接口一文件） · 接口数：6
 >
-> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 标签的增删改查、标签-用户关联操作。
 

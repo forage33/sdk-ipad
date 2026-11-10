@@ -2,7 +2,7 @@
 
 > 契约层参考：`callback_payload_msg.go` · 回调数：27
 >
-> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 文本/GIF/小程序/链接/视频号/位置/名片/内外联系人媒体/红包/语音/通话/撤回/合并/系统/接龙等消息回调。
 

@@ -2,7 +2,7 @@
 
 > 契约层参考：`callback_payload_account.go` · 回调数：6
 >
-> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [回调总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 扫码/取消/确认/登录成功/企业切换/验证码回调。
 

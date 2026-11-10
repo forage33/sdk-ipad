@@ -2,7 +2,7 @@
 
 > 源文件：`api_wx_init_*.go`（每接口一文件） · 接口数：5
 >
-> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../ARCHITECTURE.md)
+> ← [API 总览](../README.md) · [文档索引](../../INDEX.md) · [架构文档](../../../ARCHITECTURE.md)
 
 初始化企业微信、设置回调地址、获取运行实例、关闭连接。
 

@@ -1,8 +1,10 @@
 # sdk-ipad — 企业微信 iPad 协议 SDK
 
-独立 Go 子模块（`module ocean-scrm-server/sdk-ipad`），封装与企微 iPad 协议服务的全部交互：**主动调用 API**、**回调分发机制**、**回调数据契约**、**HTTP 传输适配**。
+独立 Go 模块（`module github.com/forage33/sdk-ipad`），封装与企微 iPad 协议服务的全部交互：**主动调用 API**、**回调分发机制**、**回调数据契约**、**HTTP 传输适配**。
 
-仅依赖标准库 + `go.uber.org/zap` + `github.com/tidwall/gjson`，不依赖任何宿主项目代码，可独立编译、测试、打 tag 发版。宿主工程（ocean-scrm-server）通过根 `go.mod` 的 `require + replace => ../sdk-ipad` 引用，import 路径 `ocean-scrm-server/sdk-ipad` 保持不变。
+仅依赖标准库 + `go.uber.org/zap` + `github.com/tidwall/gjson`，不依赖任何宿主项目代码，可独立编译、测试、打 tag 发版。仓库地址：<https://github.com/forage33/sdk-ipad>。
+
+架构设计（分片管理、共享 Worker 池、Hook 机制、消息处理流程、并发安全与生命周期）详见 [ARCHITECTURE.md](ARCHITECTURE.md)。
 
 ## 快速开始
 
@@ -142,7 +144,8 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 
 | 路径 | 内容 |
 |---|---|
-| `docs/ARCHITECTURE.md` / `docs/INDEX.md` | 架构说明 / 文档索引 |
+| `ARCHITECTURE.md` | 架构说明：分片管理、共享 Worker 池、Hook 机制、消息处理流程、并发安全与生命周期（模块根目录） |
+| `docs/INDEX.md` | 文档索引：API 域 / 回调域导航与封装状态总览 |
 | `docs/api/` | API 接口文档：按域子目录（01-初始化 ~ 14-群操作）组织，每个请求路由一个独立文档；拆分前分册归档于 `docs/api/_archive/` |
 | `docs/callback/` | 回调消息文档：按域子目录（01-登录回调 ~ 07-聊天标签与断开回调）组织，每个回调事件一个独立文档（契约层字段名的权威出处）；拆分前分册归档于 `docs/callback/_archive/` |
 
@@ -155,8 +158,13 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 | `PriorityQueue` | 优先级档位数、每档容量、高优容量（回调分发；**预留**：调度未实现，当前队列为单一 FIFO） |
 | `Logger` | `*zap.Logger`，宿主注入（Field 风格）；nil 时回退 `zap.L()`。SDK 不依赖宿主日志封装 |
 
-## 子模块与发版
+## 独立仓库与发版
 
-- 本模块独立携带 `go.mod`/`go.sum`，在模块目录内单独执行 `go build ./...`、`go test ./...`、`golangci-lint run ./...`（宿主模块的 `./...` 不覆盖本目录）。
-- 独立发版：打语义化 tag 后，将宿主 `go.mod` 的 `replace ocean-scrm-server/sdk-ipad => ../sdk-ipad` 替换为远端版本即可，import 路径无需改动。
-- 协议字段演进时**只改本模块**（优先契约层文件），并通过 `docs/callback/` 分册同步文档。
+- 本仓库独立携带 `go.mod`/`go.sum`，在仓库目录内单独执行 `go build ./...`、`go test ./...`、`golangci-lint run ./...`。
+- 引用方式：宿主工程 `go get github.com/forage33/sdk-ipad@v0.1.0`（联调期可用 `replace` 指向本地副本）。
+- 独立发版：打语义化 tag（如 `v0.1.0`）并推送，宿主按 tag 升级版本即可，import 路径不变。
+- 协议字段演进时**只改本仓库**（优先契约层文件），并通过 `docs/callback/` 分册同步文档。
+
+## 联系作者
+
+- QQ：1801533361

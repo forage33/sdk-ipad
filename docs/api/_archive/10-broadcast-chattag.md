@@ -1,4 +1,4 @@
-> ← [返回文档索引](../../INDEX.md) | [架构文档](../../ARCHITECTURE.md)
+> ← [返回文档索引](../../INDEX.md) | [架构文档](../../../ARCHITECTURE.md)
 ## 十一、控制台群发 (broadcast.go)
 
 ### 11.1 确认群发消息 ✅ `ConfirmGroupSend`

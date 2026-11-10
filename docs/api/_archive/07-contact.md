@@ -1,4 +1,4 @@
-> ← [返回文档索引](../../INDEX.md) | [架构文档](../../ARCHITECTURE.md)
+> ← [返回文档索引](../../INDEX.md) | [架构文档](../../../ARCHITECTURE.md)
 ## 八、联系人操作 (contact.go)
 
 ### 8.1 获取内部联系人列表 [已封装: GetInnerContacts]

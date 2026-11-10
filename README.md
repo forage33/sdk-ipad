@@ -140,14 +140,13 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 | `flex_int64_test.go` | `FlexInt64` 双格式解析用例 |
 | `group_qrcode_test.go` | 群二维码接口解析用例 |
 
-### 文档目录
+### 文档
 
 | 路径 | 内容 |
 |---|---|
-| `ARCHITECTURE.md` | 架构说明：分片管理、共享 Worker 池、Hook 机制、消息处理流程、并发安全与生命周期（模块根目录） |
-| `docs/INDEX.md` | 文档索引：API 域 / 回调域导航与封装状态总览 |
-| `docs/api/` | API 接口文档：按域子目录（01-初始化 ~ 14-群操作）组织，每个请求路由一个独立文档；拆分前分册归档于 `docs/api/_archive/` |
-| `docs/callback/` | 回调消息文档：按域子目录（01-登录回调 ~ 07-聊天标签与断开回调）组织，每个回调事件一个独立文档（契约层字段名的权威出处）；拆分前分册归档于 `docs/callback/_archive/` |
+| `ARCHITECTURE.md` | 架构说明：分片管理、共享 Worker 池、Hook 机制、消息处理流程、并发安全与生命周期（仓库根目录） |
+
+> 接口文档（API 域）与回调文档不随仓库发布，需要请联系作者（QQ：1801533361）获取。
 
 ## 配置参考（SdkConfig）
 
@@ -163,8 +162,9 @@ func handleMsgCallback(ctx *sdk_ipad.HookContext, msg *sdk_ipad.CallBackMsg) err
 - 本仓库独立携带 `go.mod`/`go.sum`，在仓库目录内单独执行 `go build ./...`、`go test ./...`、`golangci-lint run ./...`。
 - 引用方式：宿主工程 `go get github.com/forage33/sdk-ipad@v0.1.0`（联调期可用 `replace` 指向本地副本）。
 - 独立发版：打语义化 tag（如 `v0.1.0`）并推送，宿主按 tag 升级版本即可，import 路径不变。
-- 协议字段演进时**只改本仓库**（优先契约层文件），并通过 `docs/callback/` 分册同步文档。
+- 协议字段演进时**只改本仓库**（优先契约层文件）；协议文档由作者内部维护，不随仓库发布。
 
 ## 联系作者
 
 - QQ：1801533361
+- 需要 API 接口文档、回调文档或接入支持，请通过 QQ 联系作者发送。
